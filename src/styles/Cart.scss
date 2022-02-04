@@ -1,0 +1,12 @@
+@import './variables';
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    .cart-items {
+        flex-basis: 63%;
+    }
+    .shipping-container {
+        flex-basis: 35%;
+    }
+}

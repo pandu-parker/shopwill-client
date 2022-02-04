@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.deals {
+  display: flex;
+  .deal {
+    border: 1px solid #ccc;
+    flex-basis: 32%;
+    margin-right: 1%;
+    figure {
+      margin: 0;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    div {
+      padding: 5px 10px;
+      .price {
+          display: flex;
+          align-items: center;
+          .full-price {
+              margin-right: 5px;
+              text-decoration: line-through;
+          }
+          .deal-price {
+              font-size: 20px;
+              color : $green;
+          }
+          .discount {
+              margin: 0 5px;
+              padding: 3px 7px;
+              border-radius: 5px;
+              background-color: $primary;
+              color: $white;
+              font-size: 12px;
+          }
+      }
+    }
+  }
+}

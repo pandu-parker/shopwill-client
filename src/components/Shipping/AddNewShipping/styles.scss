@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+
+.add-new-container {
+  .form-element {
+    margin: 5px 0;
+    display: flex;
+    flex-flow: column;
+    label {
+      color: $darkGrey;
+      font-size: 12px;
+    }
+    input {
+      margin: 3px 0;
+      padding: 8px 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      &:focus {
+        border: 1px solid $primary;
+        outline: none;
+      }
+    }
+  }
+  .button-container {
+    margin: 10px 0;
+    flex-flow: row !important;
+    justify-content: space-between;
+    button {
+      flex-basis: 49%;
+      padding:8px 0;
+      font-size: 12px;
+      text-transform: none;
+      &.submit {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}

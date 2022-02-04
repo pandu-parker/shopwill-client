@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import { useEffect , useState} from 'react';
+import axios from 'axios';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import Homescreen from './screens/Homescreen';
+import ProductDetailScreen from './screens/ProductDetailScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignUpScreen';
+import AllProducts from './screens/AllProducts';
+import ProfileScreen from './screens/ProfileScreen';
+import SearchProductScreen from './screens/SearchProductScreen';
+import CartScreen from './screens/CartScreen';
+import OrdersScreen from './screens/OrdersScreen';
+import OrderDetailScreen from './screens/OrderDetailScreen';
 
 function App() {
+  useEffect(() => {
+    const get = async () => {
+      await axios.get('/api/products');
+    };
+    get();
+  });
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Header/>
+        <main>
+          <Route path='/cart' component={CartScreen} />
+          <Route path='/orders/:id' component={OrderDetailScreen} />
+          <Route path='/orders' component={OrdersScreen} exact />
+          <Route path='/search' component={SearchProductScreen} />
+          <Route path='/profile' component={ProfileScreen} />
+          <Route path='/all-items' component={AllProducts} />
+          <Route path='/signup' component={SignupScreen} />
+          <Route path='/login' component={LoginScreen} />
+          <Route path='/product/:id' component={ProductDetailScreen} />
+          <Route path='/' component={Homescreen} exact />
+        </main>
+        <Footer />
+      </Router>
     </div>
   );
 }

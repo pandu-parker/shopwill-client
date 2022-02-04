@@ -1,0 +1,28 @@
+.product {
+  display: flex;
+  flex-flow: column;
+  // flex: 2 1 auto;
+  flex-basis: 33%;
+  figure {
+    margin: 0;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 400;
+  }
+  .brand {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  .price {
+      margin: 5px 0;
+    color: #000;
+    font-weight: 600;
+  }
+}

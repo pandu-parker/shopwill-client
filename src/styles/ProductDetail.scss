@@ -1,0 +1,33 @@
+@import '../styles/variables';
+
+.go-to-cart {
+  background-color: $primary;
+  color: $white;
+  margin: 0 10px;
+}
+
+.add-to-cart {
+  background-color: $primary;
+  color: $white;
+  margin: 0 10px;
+}
+
+.product-container {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  figure {
+    margin: 0;
+    flex-basis: 60%;
+    img {
+      width: 100%;
+    }
+  }
+  .product-detail {
+    flex-basis: 35%;
+    h3 {
+      margin: 0 0 20px 0;
+    }
+  }
+
+}

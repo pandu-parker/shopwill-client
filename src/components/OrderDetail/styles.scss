@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.order-item-detail {
+  margin: 10px 0;
+  padding: 10px;
+  // border: 1px solid #ccc;
+  .order-product {
+    display: flex;
+    figure {
+      margin: 0;
+      flex-basis: 220px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .button.pay-button {
+    margin: 0 10px;
+    padding: 6px 30px;
+    background-color: $green;
+    color: $white;
+  }
+  .payment-status {
+    display: flex;
+    align-items: center;
+    span {
+      margin: 0 10px;
+      display: inline-block;
+      color: #777;
+    }
+  }
+  .paid-svg {
+    font-size: 30px;
+    fill: $green;
+  }
+  .delivered {
+    .danger-svg {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-left: 10px;
+      svg {
+        fill: red;
+      }
+    }
+  }
+}

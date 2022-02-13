@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactSlider from 'react-slider';
-import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import { getProducts } from '../actions/productActions';
 
@@ -36,7 +35,7 @@ const SearchProductScreen = ({ location, match, history }) => {
     const currentCategories = Allcategories.filter(category => {
       return categories.categories.includes(category._id);
     });
-    currentCategories.map(category => {
+    currentCategories.forEach(category => {
       const currentSubcategories = category.subCategories.filter(
         subCategory => {
           return categories.subCategories.includes(subCategory._id);

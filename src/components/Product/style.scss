@@ -6,7 +6,10 @@
   figure {
     margin: 0;
     width: 100%;
+    height: 200px;
+    // flex-basis: 100px;
     img {
+      height: 100%;
       width: 100%;
     }
   }

@@ -21,7 +21,7 @@ const Homescreen = () => {
     bottomLeft = banners.find((banner) => banner.space === 'bottom-left');
   }
   useEffect(() => {
-    dispatch(getProducts());
+    // dispatch(getProducts());
     dispatch(getBanners());
   }, [dispatch]);
   return (
@@ -30,16 +30,16 @@ const Homescreen = () => {
         <div className='banner'>
           {Array.isArray(banners) && (
             <Link to={top.link || ''}>
-              <img src={top.image} alt='' />
+              <img src={`${process.env.REACT_APP_BASE_URL}${top.image}`} alt='' />
             </Link>
           )}
         </div>
         <div className='banner-lower'>
           <Link to={bottomLeft.link || ''}>
-            <img src={bottomLeft.image} alt='' />
+            <img src={`${process.env.REACT_APP_BASE_URL}${bottomLeft.image}`} alt='' />
           </Link>
           <Link to={bottomRight.link || ''}>
-            <img src={bottomRight.image} alt='' />
+            <img src={`${process.env.REACT_APP_BASE_URL}${bottomRight.image}`} alt='' />
           </Link>
         </div>
             <Deals />

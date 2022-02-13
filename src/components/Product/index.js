@@ -8,7 +8,7 @@ const Product = ({ product }) => {
     <li>
       <Link to={`/product/${product._id}`} className='product'>
         <figure>
-          <img src={product.image} alt='' />
+          <img src={`${process.env.REACT_APP_BASE_URL}${product.images[0].path}`} alt='' />
         </figure>
         <h3>{product.name}</h3>
         <span className='brand'>{product.brand}</span>

@@ -12,9 +12,9 @@ import axios from 'axios';
 export const getProducts = query => async dispatch => {
   try {
     dispatch({ type: GET_PRODUCTS_REQUEST });
-    let url = `/api/products`;
+    let url = `${process.env.REACT_APP_BASE_URL}/api/products`;
     if (query) {
-      url = `/api/products${query}`;
+      url = `${process.env.REACT_APP_BASE_URL}/api/products${query}`;
     }
     const { data } = await axios.get(url);
     dispatch({
@@ -35,7 +35,7 @@ export const getProducts = query => async dispatch => {
 export const getProductDetail = id => async dispatch => {
   try {
     dispatch({ type: PRODUCT_DETAIL_REQUEST });
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/products/${id}`);
     dispatch({
       type: PRODUCT_DETAIL_SUCCESS,
       payload: data,

@@ -9,7 +9,7 @@ import axios from 'axios';
 export const getCategories = () => async (dispatch) => {
   try {
     dispatch({ type: GET_CATEGORIES_REQUEST });
-    const { data } = await axios.get('/api/categories/category');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/categories/category`);
     dispatch({
       type: GET_CATEGORIES_SUCCESS,
       payload: data,

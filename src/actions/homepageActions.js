@@ -9,7 +9,7 @@ import {
   export const getBanners = () => async (dispatch) => {
     try {
       dispatch({ type: GET_BANNERS_REQUEST });
-      const { data } = await axios.get('/api/homepage/banner');
+      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/homepage/banner`);
       dispatch({
         type: GET_BANNERS_SUCCESS,
         payload: data,

@@ -19,8 +19,9 @@ const ProductDetailScreen = ({ match }) => {
   const cartReducer = useSelector(state => state.cartList);
   const { cart } = cartReducer;
   useEffect(() => {
-    if (!product) return;
-    if (!product.name || product._id !== id) {
+    // if (!product.name) return;
+    // console.log(product)
+    if (product._id !== id) {
       dispatch(getProductDetail(id));
     }
   }, [id, dispatch]);
@@ -47,7 +48,7 @@ const ProductDetailScreen = ({ match }) => {
         {product && product._id ? (
           <>
             <figure>
-              <img src={product.image} alt='' />
+              <img src={`${process.env.REACT_APP_BASE_URL}${product.images[0].path}`} alt='' />
             </figure>
             <div className='product-detail'>
               <h3>{product.name}</h3>

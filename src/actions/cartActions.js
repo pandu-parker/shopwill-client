@@ -26,7 +26,7 @@ export const getCart = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get('/api/cart/', config);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/cart/`, config);
     dispatch({
       type: GET_CART_SUCCESS,
       payload: data,
@@ -54,7 +54,7 @@ export const deleteCartItem = id => async (dispatch, getState) => {
       },
     };
     console.log(config)
-    const { data } = await axios.delete(`/api/cart/${id}`, config);
+    const { data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/cart/${id}`, config);
     dispatch({
       type: DELETE_CART_SUCCESS,
       payload: data,
@@ -82,7 +82,7 @@ export const editCart = (id, quantity) => async(dispatch, getState) =>{
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.post(`/api/cart/`, {product: id, quantity} ,config);
+    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/cart/`, {product: id, quantity} ,config);
     dispatch({
       type: EDIT_CART_SUCCESS,
       payload: data,
@@ -110,7 +110,7 @@ export const emptyCart = () => async(dispatch, getState) =>{
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.delete(`/api/cart/`, config);
+    const { data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/cart/`, config);
     dispatch({
       type: EMPTY_CART_SUCCESS,
       payload: data,

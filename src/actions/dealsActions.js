@@ -9,7 +9,7 @@ import axios from 'axios';
 export const getDeals = () => async dispatch => {
   try {
     dispatch({ type: GET_DEALS_REQUEST });
-    const { data } = await axios.get('/api/deals/');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/deals/`);
     dispatch({
       type: GET_DEALS_SUCCESS,
       payload: data,

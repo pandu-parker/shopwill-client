@@ -17,13 +17,6 @@ import OrdersScreen from './screens/OrdersScreen';
 import OrderDetailScreen from './screens/OrderDetailScreen';
 
 function App() {
-  useEffect(() => {
-    const get = async () => {
-      await axios.get('/api/products');
-    };
-    get();
-  });
- 
   return (
     <div className='App'>
       <Router>

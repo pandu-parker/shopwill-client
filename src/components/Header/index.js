@@ -46,8 +46,7 @@ const Header = ({ history }) => {
   const editSearchTermHandler = e => {
     dispatch(editSearch({ term: e.target.value }));
     if (e.target.value !== '') {
-      axios.get(`/api/products/search?query=${e.target.value}`).then(res => {
-        console.log(res.data);
+      axios.get(`${process.env.REACT_APP_BASE_URL}/api/products/search?query=${e.target.value}`).then(res => {
         setSearchSuggestion(res.data);
       });
     } else {
@@ -56,8 +55,7 @@ const Header = ({ history }) => {
   };
 
   const getSearchSuggestions = (e) => {
-    axios.get(`/api/products/search?query=${e.target.value}`).then(res => {
-      console.log(res.data);
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/products/search?query=${e.target.value}`).then(res => {
       setSearchSuggestion(res.data);
     });
   }
